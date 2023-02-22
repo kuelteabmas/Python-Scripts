@@ -1,0 +1,9 @@
+# ignore these
+*.docx
+*.txt
+*.csv
+*.xlsx
+
+# do not ignore these
+!avery-template-5167.docx
+!label-names.xlsx

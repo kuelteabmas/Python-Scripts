@@ -1,9 +1,19 @@
 from docxtpl import DocxTemplate
 from openpyxl import load_workbook
+# from openpyxl.cell.text import InlineFont, Font
+# from openpyxl.cell.rich_text import TextBlock, CellRichText
+
+
 
 def iterating_column(path, sheet_name, col):
+
+    # # Font size = 10 
+    # # fontForOver23Chars = InlineFont(sz="10.0")
+    # fontForOver23Chars = InlineFont(sz=10)
+    
+
     # Import template document
-    template = DocxTemplate('avery-template-1.docx')
+    template = DocxTemplate('avery-template-5167.docx')
 
     workbook = load_workbook(filename=path)
     if sheet_name not in workbook.sheetnames:
@@ -16,8 +26,14 @@ def iterating_column(path, sheet_name, col):
         # replace chars in fetched cell result
         cellData = cell.value
 
+        # if len(cellData) > 23:
+        #     cellData = CellRichText(
+        #         # cellData,
+        #         TextBlock(fontForOver23Chars, cellData)
+        #     )
+
         s = str(cellData)
-        s.translate({ord('\''):None})
+        s.translate({ord('\''):None}) # remove single quotes from cell data object
         print(s)
 
         # Declare template variables
