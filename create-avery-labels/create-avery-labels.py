@@ -34,7 +34,7 @@ def iterating_column(path, sheet_name, col):
 
         s = str(cellData)
         s.translate({ord('\''):None}) # remove single quotes from cell data object
-        print(s)
+        print("Name: "+ s)
 
         # Declare template variables
         context = {
@@ -49,4 +49,4 @@ def iterating_column(path, sheet_name, col):
         template.save(fileName)
 
 if __name__ == "__main__":
-    iterating_column("label-names.xlsx", sheet_name="Sheet1", col="A")
+    iterating_column("output.xlsx", sheet_name="Sheet1", col="A")

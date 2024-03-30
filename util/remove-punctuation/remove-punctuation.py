@@ -1,12 +1,12 @@
 import os
 import csv
 
-def removePunctuation(path, inputFileName, outputFileName):
+def removePunctuation(inputFileName, outputFileName):
     print("Current working directory before")
     print(os.getcwd())
-    os.chdir('../')
-    os.chdir(path)
-    print("Changed dir. \nCurrent working directory after")
+    # os.chdir('../')
+    # os.chdir(path)
+    # print("Changed dir. \nCurrent working directory after")
     print(os.getcwd())
 
     with open(inputFileName, 'r') as inputFile:
@@ -23,4 +23,4 @@ def removePunctuation(path, inputFileName, outputFileName):
             outputFile2.writelines(newLine)
 
 if __name__ == "__main__":
-    removePunctuation(path="file-dropbox/", inputFileName="label-names-to-fix.txt", outputFileName="label-names-fixed.txt")
+    removePunctuation(inputFileName="label-names-to-fix.txt", outputFileName="label-names-fixed.txt")
