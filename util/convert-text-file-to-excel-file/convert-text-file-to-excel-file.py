@@ -8,17 +8,7 @@ with open('input.txt', 'r') as file:
     lines = file.readlines()
 
 ## Remove the word "type", punctuation and extra spacing from each line
-
-###### working correctly
-# lines = [line.replace(' type ', '') for line in lines]
-# lines = [line.replace(' type', '') for line in lines]
-# lines = [line.replace(':', ' ') for line in lines]
-# lines = [line.replace('  ', ' ') for line in lines]
-# lines = [line.replace('  ', ' ') for line in lines]
-
-
-###### working correctly
-lines = [line.replace(' type ', '').replace(' type', '').replace(':', ' ').replace('  ', ' ').replace('  ', ' ') for line in lines]
+lines = [line.replace(' type ', '').replace(' type', '').replace(':', ' ').replace('  ', ' ').replace('  ', ' ').strip() for line in lines]
 
 
 # Write modified lines to a text file

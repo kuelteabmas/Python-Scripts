@@ -13,7 +13,7 @@ def iterating_column(path, sheet_name, col):
     
 
     # Import template document
-    template = DocxTemplate('avery-template-5167.docx')
+    template = DocxTemplate('avery-template-5167-font-size-8.docx')
 
     workbook = load_workbook(filename=path)
     if sheet_name not in workbook.sheetnames:
@@ -40,6 +40,22 @@ def iterating_column(path, sheet_name, col):
         context = {
             'name': s
         }
+
+
+        # # if char size of label name/cell data is < 23, print 'type' at the end of the label name 
+        # if len(cellData) < 23:
+        #     context = {
+        #         'name': s
+        #     }
+
+        # empty_str = " "
+        # # if char size of label name/cell data is > 23, don't print 'type' at the end of the label name 
+        # if len(cellData) > 23:
+        #     context = {
+        #         'name': s,
+        #         'type': empty_str
+        #     }
+
 
         # Copy data from variables to template variables
         template.render(context)
