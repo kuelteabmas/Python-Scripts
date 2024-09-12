@@ -22,4 +22,4 @@ Install docxtpl
 ## Run script
 Run script
 
-`python create-avery-labels.py`
+`python3 create-avery-labels.py`
