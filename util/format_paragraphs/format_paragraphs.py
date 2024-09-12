@@ -10,7 +10,7 @@ def formatParagraphs():
         lines = file.readlines()
 
     lines = [line.replace('\n', ' ') for line in lines]
-    lines = [line.strip().replace('(Risas)', '\n\n') for line in lines]
+    lines = [line.replace('(Risas)', '\n\n') for line in lines]
 
     # Write modified lines to a text file
     with open('formatted_paragraphs.txt', 'w') as file:
